@@ -1,42 +1,60 @@
 
+
 //Gráfico de Barra
 //Gráfico 1
 
-var xValues1= ["05/9", "06/9", "07/9", "08/9", "09/9","10/9","11/9","12/9"];
-var yValues1= [25, 35, 20, 15, 18, 14, 35, 40];
-var yValues2= [18, 10, 10, 18, 14, 17, 20, 7];
 
-new Chart(document.getElementById("grafico0"), {
-    type: 'bar',
-    data: {
-      labels:xValues1,
-      datasets: [
+let url = "http://localhost:2000/noticias"
+          
+fetch(url)
+.then((response) => {
+return response.json();
+})
+.then((data) => {
+    dados = data;
+    console.log(data)
+
+
+  
+    var xValues1= data['data'];
+    var yValues1= data['valor'];
+    var yValues2= data['valor2'];
+    
+    new Chart(document.getElementById("grafico0"), {
+        type: 'bar',
+        data: {
+          labels:xValues1,
+          datasets: [
+            {
+              label: "Últimos 7 dias",
+              backgroundColor:["#8C4AF4"],
+              data: yValues1
+            }, {
+              label: "Últimos 15 dias",
+              backgroundColor: ["#E6E8EC"],
+              data: yValues2,
+            }
+          ]
+        },
+        options: 
         {
-          label: "Últimos 7 dias",
-          backgroundColor:["#8C4AF4"],
-          data: yValues1
-        }, {
-          label: "Últimos 15 dias",
-          backgroundColor: ["#E6E8EC"],
-          data: yValues2,
+          legend: { display: false},
+          title: {
+            display: true,
+            text: 'Predicted world population (millions) in 2050'
+          },
+          plugins: {
+            legend: {
+                position: 'bottom',
+                align:'start'
+            }
+          }
         }
-      ]
-    },
-    options: 
-    {
-      legend: { display: false},
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      },
-      plugins: {
-        legend: {
-            position: 'bottom',
-            align:'start'
-        }
-      }
-    }
-});
+    });
+  }
+);
+
+
 
 
 //Gráfico de Linha
@@ -204,3 +222,5 @@ new Chart(document.getElementById("grafico3"), {
     }
     }
 });
+
+

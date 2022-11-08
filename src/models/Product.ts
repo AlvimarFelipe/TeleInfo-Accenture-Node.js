@@ -18,3 +18,4 @@ export const Product = {
         return data.filter(item => item.price >= price);
     }
 };
+
