@@ -49,45 +49,82 @@
           <div class="negrito" id="gg">Atendimentos por período</div>
 
           <div class="select_dias">
-          <div class="dias">
-            Primeira Coluna
+              <div class="mes">
+              Mês
+                <label  for="dias"></label>
+                <select class="cor_btn btn_padding" name="dias" >
+              {{#datames}}
+                    <option value="{{mes}}">{{mes}}</option>
+                {{/datames}} 
+                </select>     
+            </div> 
+
+              <div class="ano">
+              Ano
+                <label  for="dias"></label>
+                <select class="cor_btn btn_padding" name="dias" >
+              {{#dataano}}
+                    <option value="{{ano}}">{{ano}}</option>
+                {{/dataano}} 
+                </select>     
+            </div> 
+          </div> 
+        
+          <div class="select_dias">
+
+            <div class="mes">
+              Mês
               <label  for="dias"></label>
               <select class="cor_btn btn_padding" name="dias" >
-                  <option  value="1dia">1 dia</option>
-                  <option value="7dias"selected>7 dias</option>
-                  <option value="15dias">15 dias</option>
-                  <option value="1mes">1 mes</option>
-              </select>      
-          </div>
-            <div class="divisao"></div>
-          <div >
-            Segunda Coluna
+                {{#datames}}
+                    <option value="{{mes}}">{{mes}}</option>
+                {{/datames}} 
+              </select>     
+            </div> 
+
+            <div class="ano">
+              Ano
               <label  for="dias"></label>
               <select class="cor_btn btn_padding" name="dias" >
-                  <option  value="1dia">1 dia</option>
-                  <option value="7dias"selected>7 dias</option>
-                  <option value="15dias">15 dias</option>
-                  <option value="1mes">1 mes</option>
-              </select>      
-          </div>
-          </div>  
+                {{#dataano}}
+                    <option value="{{ano}}">{{ano}}</option>
+                {{/dataano}} 
+              </select>     
+            </div> 
+          </div> 
+
         </div>
-        <canvas id="grafico0" class="grafico"></canvas>
+
+        <div>
+          <canvas id="grafico0" class="grafico"></canvas>
+        </div>
       </div>
 
 
       <div class="grid5 item espacamento_2">
         <div class="negrito">Prioriadade de Atendimento</div>
-        <div class="dias">
-            Tempo
+        <div class="select_dias">
+
+            <div class="mes">
+              Mês
               <label  for="dias"></label>
               <select class="cor_btn btn_padding" name="dias" >
-                  <option  value="1dia">1 dia</option>
-                  <option value="7dias"selected>7 dias</option>
-                  <option value="15dias">15 dias</option>
-                  <option value="1mes">1 mes</option>
-              </select>      
-          </div>
+                {{#datames}}
+                    <option value="{{mes}}">{{mes}}</option>
+                {{/datames}} 
+              </select>     
+            </div> 
+
+            <div class="ano">
+              Ano
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#dataano}}
+                    <option value="{{ano}}">{{ano}}</option>
+                {{/dataano}} 
+              </select>     
+            </div> 
+          </div> 
         <canvas id="grafico1" class="grafico"></canvas>
       </div>
 
@@ -104,16 +141,38 @@
 
       <div class="grid7 item espacamento_2">  
         <div class="negrito">Tempo Médio de Execução do Atendimento de cada funcionário</div>
-           <div class="dias">
-            Tempo
+     <div class="select_dias">
+
+            <div class="mes">
+              Nome do funcionário
               <label  for="dias"></label>
               <select class="cor_btn btn_padding" name="dias" >
-                  <option  value="1dia">1 dia</option>
-                  <option value="7dias"selected>7 dias</option>
-                  <option value="15dias">15 dias</option>
-                  <option value="1mes">1 mes</option>
-              </select>      
-          </div>
+                {{#nomeFun}}
+                    <option value="{{nomeFuncionario}}">{{nomeFuncionario}}</option>
+                {{/nomeFun}} 
+              </select>     
+            </div> 
+
+            <div class="mes">
+              Mês
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#datames}}
+                    <option value="{{mes}}">{{mes}}</option>
+                {{/datames}} 
+              </select>     
+            </div> 
+
+            <div class="ano">
+              Ano
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#dataano}}
+                    <option value="{{ano}}">{{ano}}</option>
+                {{/dataano}} 
+              </select>     
+            </div> 
+          </div> 
         <canvas id="grafico3" class="grafico"></canvas>
       </div>
       

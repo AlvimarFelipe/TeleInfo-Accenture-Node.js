@@ -1,0 +1,24 @@
+<div class="select_dias">
+  <div class="mes">
+    Mês
+    <label  for="dias"></label>
+    <select class="cor_btn btn_padding" name="dias" >
+      {{#datames}}
+          <option value="{{mes}}">{{mes}}</option>
+      {{/datames}} 
+    </select>     
+  </div> 
+
+  <div class="ano">
+    Ano
+    <label  for="dias"></label>
+    <select class="cor_btn btn_padding" name="dias" >
+      {{#dataano}}
+          <option value="{{ano}}">{{ano}}</option>
+      {{/dataano}} 
+    </select>     
+  </div> 
+</div> 
+
+
+       {{! como usar {{>partials/filtro}}  }}

@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 
 import { sequelize } from '../instances/mysql'
 
+import {datames,dataano,nomeFun}  from '../models/Filtro'
 //import { Product } from '../models/Product';
 
 
@@ -16,7 +17,10 @@ export const home = async (req: Request, res: Response)=>{
   //  let expensiveList = Product.getFromPriceAfter(12);
   
     res.render('pages/home', {
-   
+        datames,
+        dataano,
+        nomeFun
     });
+    
 };
 
