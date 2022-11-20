@@ -1,7 +1,4 @@
-
 const select = document.querySelector('#selecionado');
-
-
 
 select.addEventListener('change', () =>{
    
