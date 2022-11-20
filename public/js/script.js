@@ -1,6 +1,9 @@
 //Gráfico de Barra
 //Gráfico 1
 
+
+
+
 const url = "http://localhost:2000/adm/noticias"
           
 fetch(url)

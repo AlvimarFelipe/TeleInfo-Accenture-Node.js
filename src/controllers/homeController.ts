@@ -23,4 +23,3 @@ export const home = async (req: Request, res: Response)=>{
     });
     
 };
-

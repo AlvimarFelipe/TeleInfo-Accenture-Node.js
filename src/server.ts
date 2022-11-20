@@ -4,6 +4,9 @@ import mustache from 'mustache-express';
 import dotenv from 'dotenv';
 import mainRoutes from './routes/index';
 
+
+const bodyParser = require('body-parser')
+
 dotenv.config();
 
 const server = express();
@@ -15,6 +18,8 @@ server.engine('mustache', mustache());
 server.use(express.static(path.join(__dirname, '../public')));
 
 server.use(express.urlencoded({extended: true}));
+server.use(bodyParser.urlencoded({ extended: true }));
+server.use(bodyParser.json());
 
 server.use(mainRoutes);
 
