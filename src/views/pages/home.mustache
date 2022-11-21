@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styleHome.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>New Accenture</title>
+
+ 
+  </head>
+  <body>
+    <div class="container">
+      <div class="grid1 item espacamento_menu background_menu_logo">
+        <div class="logo"><img class="img_logo" src="/imagens/logo.svg"><span class="vertical_logo">Teleinfo</span></div>
+      </div>
+
+      <div class="grid2 flex item">
+        <div class="negrito">Dashboard</div>
+        <div>
+
+      
+
+          <i class="fa-solid fa-circle-user profile"></i>
+          <label for="config_perfil"></label>
+          <select class="config-perfil" name="config_perfil" >
+              <option value="" selected>Perfil admin</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+          </select> 
+          <i class="fa-solid fa-bell bell"></i>
+        </div>
+      </div>
+
+
+      <div class="grid3 item espacamento_menu cor_menu">
+        <div class="nav">Menu</div>
+        <div class="nav  icone_alinamento"><a class="cor_btn_menu" href=""> <i class="fa-solid fa-chart-simple icon "></i> Dashboards</a></div>
+        <div class="nav  icone_alinamento"><a href=""class="cor_btn_menu"> <i class="fa-solid fa-chart-simple gira icon "></i> Relatórios</a></div>
+       
+      </div>
+
+
+      <div class="grid4 item espacamento_2">
+        <div class="flex">
+          <div class="negrito" id="gg">Atendimentos por período</div>
+
+          <div class="select_dias">
+              <div class="mes">
+              Mês
+                <label  for="dias"></label>
+                <select class="cor_btn btn_padding" name="dias" >
+              {{#datames}}
+                    <option value="{{mes}}">{{mes}}</option>
+                {{/datames}} 
+                </select>     
+            </div> 
+
+              <div class="ano">
+              Ano
+                <label  for="dias"></label>
+                <select class="cor_btn btn_padding" name="dias" >
+              {{#dataano}}
+                    <option value="{{ano}}">{{ano}}</option>
+                {{/dataano}} 
+                </select>     
+            </div> 
+          </div> 
+        
+          <div class="select_dias">
+
+            <div class="mes">
+              Mês
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#datames}}
+                    <option value="{{mes}}">{{mes}}</option>
+                {{/datames}} 
+              </select>     
+            </div> 
+
+            <div class="ano">
+              Ano
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#dataano}}
+                    <option value="{{ano}}">{{ano}}</option>
+                {{/dataano}} 
+              </select>     
+            </div> 
+          </div> 
+
+        </div>
+
+        <div>
+          <canvas id="grafico0" class="grafico"></canvas>
+        </div>
+      </div>
+
+
+      <div class="grid5 item espacamento_2">
+        <div class="negrito">Prioriadade de Atendimento</div>
+        <div class="select_dias">
+
+            <div class="mes">
+              Mês
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#datames}}
+                    <option value="{{mes}}">{{mes}}</option>
+                {{/datames}} 
+              </select>     
+            </div> 
+
+            <div class="ano">
+              Ano
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#dataano}}
+                    <option value="{{ano}}">{{ano}}</option>
+                {{/dataano}} 
+              </select>     
+            </div> 
+          </div> 
+        <canvas id="grafico1" class="grafico"></canvas>
+      </div>
+
+
+      <div class="grid6 item espacamento_2">
+        <div class="flex">
+          <div class="negrito">Horário de Pico</div>
+          <div><input class="cor_btn" type="button" value="Ver Relatório">
+          </div>
+        </div>
+        <canvas id="grafico2" class="grafico"></canvas>
+      </div>
+
+
+      <div class="grid7 item espacamento_2">  
+        <div class="negrito">Tempo Médio de Execução do Atendimento de cada funcionário</div>
+     <div class="select_dias">
+
+            <div class="mes">
+              Nome do funcionário
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#nomeFun}}
+                    <option value="{{nomeFuncionario}}">{{nomeFuncionario}}</option>
+                {{/nomeFun}} 
+              </select>     
+            </div> 
+
+            <div class="mes">
+              Mês
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#datames}}
+                    <option value="{{mes}}">{{mes}}</option>
+                {{/datames}} 
+              </select>     
+            </div> 
+
+            <div class="ano">
+              Ano
+              <label  for="dias"></label>
+              <select class="cor_btn btn_padding" name="dias" >
+                {{#dataano}}
+                    <option value="{{ano}}">{{ano}}</option>
+                {{/dataano}} 
+              </select>     
+            </div> 
+          </div> 
+        <canvas id="grafico3" class="grafico"></canvas>
+      </div>
+      
+
+      <div class="grid8 item espacamento_menu cor_menu ">
+        <div class="espacamento_4 icon "><hr/></div>
+        <div class="nav"><a href="" class="cor_btn_menu"> <i class="fa-solid fa-gear icon"></i> Ajuste</a></div>
+        <div class="nav"><a href="" class="cor_btn_menu"> <i class="fa-solid fa-user icon"></i> Perfis</a></div>
+        <div class="nav"><a href="" class="cor_btn_menu"> <i class="fa-solid fa-circle-info icon"></i> Ajuda</a></div>
+      </div>
+
+
+      <div class="grid9"><hr/></div>
+      <div class="grid10 espacamento_3"><hr/></div>
+      <div class="grid11 espacamento_3"><hr/></div>
+    </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/32b09ec398.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0c0ce94d;
+}
+@media  screen and (max-width: 1620px) {
+  /* For mobile phones: */
+  .linha {
+    display:none;
+  }
+}
+.container {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    border-radius: 60px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .212);
+}
+
+.form_img {
+    width: 50%;
+    display: flex;
+  
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 30px 60px;
+    box-shadow: 2.5 2.5 10;
+}
+
+.form_img img {
+    width: 31rem;
+}
+.linha::after{
+
+
+     content: '';
+    display: flex;
+    height: 30%;
+    width: 0.2rem;
+    background-color: #6c63ff;
+    margin: 0 auto;
+    position: absolute;
+
+    border-radius: 10px;
+  
+}
+.login-box {
+    width: 30%;
+    min-width:260px ;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 30px 60px;
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cadastro-button {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cadastro-button input {
+    border: none;
+    background-color: #6c63ff;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cadastro-button input:hover {
+    background-color: #6b63fff1;
+}
+
+.cadastro-button input a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+
+.form_header h1::after {
+    content: '';
+    display: flex;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #6c63ff;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.title {
+    padding: 3rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.user-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.user-box input {
+    margin: 0.6rem;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
+
+.user-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.user-box input:focus-visible {
+    outline: 1px solid #6c63ff;
+}
+
+.user-box label {
+    font-size: 0.80rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.user-box input:placeholder {
+    color: #0000000c;
+}

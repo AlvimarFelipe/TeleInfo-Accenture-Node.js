@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Teste Conteudo </title>
+ 
+  </head>
+  <body>
+
+    <h1>Funcionarios </h1>
+
+   <div>
+      nome
+      <label  for="nome"></label>
+      <select id="selecionado" class="cor_btn btn_padding" name="nome" >
+        {{#funcionarios}}
+            <option value="{{id}}">{{Nome}}</option>
+        {{/funcionarios}} 
+      </select>     
+    </div> 
+
+
+    <ul> 
+        {{#funcionarios}} 
+            <li><b>Identificador:</b>{{id}}</li>
+            <li><b> Nome:</b>{{Nome}}</li> 
+            <li><b> Email:</b>{{e-mail}}</li>
+            <br> 
+        {{/funcionarios}} 
+    </ul> 
+
+      <span id="teste"></span>
+    <script src="/js/filtro.js"></script>
+
+  </body>
+</html>
