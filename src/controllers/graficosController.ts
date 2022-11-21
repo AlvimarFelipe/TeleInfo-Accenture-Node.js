@@ -16,7 +16,6 @@ export let myAdd = function (mes: String, ano: String) {
   
 export const data = async (req: Request, res: Response)=>{
 
-    
         var filtro = ano1+'-'+mes1
      
         let funcionarios = await Atendimento.findAll({
@@ -29,7 +28,6 @@ export const data = async (req: Request, res: Response)=>{
         },
         group:['Data']
     });
-
 
     res.json({ 
         funcionarios,

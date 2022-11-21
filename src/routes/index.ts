@@ -15,10 +15,11 @@ router.get('/home', HomeController.home);
 
 router.get('/teste',testeController.conteudo);
 
-router.get('/adm/noticias',graficosController.data);
+
+router.get('/dadosgraficos',graficosController.data);
+
 
 router.post('/selectdata',selectDataController.app);
-
 
 
   
