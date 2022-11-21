@@ -40,7 +40,7 @@ export const Atendimento = sequelize.define<AtendimentoInstance>("Atendimento",{
     }
 }
 ,{
-    tableName:'funcionario',
+    tableName:'atendimento',
     timestamps: false
 });
 

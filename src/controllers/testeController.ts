@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
 import { Op } from 'sequelize';
+import { Funcionario } from '../models/funcionario';
 
 
 
 export const conteudo = async (req: Request, res: Response)=>{
     var nomes= 'AMB'+'%';
-/*
+
     let funcionarios = await Funcionario.findAll({
         attributes:['id','Nome','e-mail'],
        
@@ -26,7 +27,7 @@ export const conteudo = async (req: Request, res: Response)=>{
     
     res.render('pages/testeConteudo',{
         funcionarios
-    });*/
+    });
 };
 
 
