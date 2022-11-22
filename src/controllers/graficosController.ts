@@ -10,7 +10,7 @@ export const data = async (req: Request, res: Response)=>{
         let ano2 = req.query.ano2;
         let mes2 = req.query.mes2;   
      
-        let funcionarios = await Atendimento.findAll({
+        let consulta1g1 = await Atendimento.findAll({
             attributes:['Data','idAtendimento', [sequelize.fn('count', sequelize.col('idAtendimento')), 'total']],
             raw: true,
             where:{
@@ -22,7 +22,7 @@ export const data = async (req: Request, res: Response)=>{
         });
 
         
-        let funcionarios2 = await Atendimento.findAll({
+        let consulta2g1 = await Atendimento.findAll({
             attributes:['Data','idAtendimento', [sequelize.fn('count', sequelize.col('idAtendimento')), 'total']],
             raw: true,
             where:{
@@ -36,9 +36,9 @@ export const data = async (req: Request, res: Response)=>{
         
 
     res.json({ 
-        funcionarios,
-        funcionarios2,
-        data_graf: [ano1,mes1,ano2,mes2],
+        consulta1g1,
+        consulta2g1,
+        data_graf1: [ano1,mes1,ano2,mes2],
 
 
        

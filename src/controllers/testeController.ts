@@ -1,29 +1,24 @@
 import { Request, Response } from 'express';
+import sequelize from 'sequelize';
 import { Op } from 'sequelize';
-import { Funcionario } from '../models/funcionario';
+import { Atendimento } from '../models/atendimento';
 
 
 
 export const conteudo = async (req: Request, res: Response)=>{
     var nomes= 'AMB'+'%';
 
-    let funcionarios = await Funcionario.findAll({
-        attributes:['id','Nome','e-mail'],
-       
+
+    let funcionarios = await Atendimento.findAll({
+        attributes:['Data','DataAno','Hora_inicio', [sequelize.fn('count', sequelize.col('idAtendimento')), 'total'],],
+        raw: true,
         where:{
-            Nome:{
-                [Op.like]:nomes
+            Data:{
+                [Op.like]: `%${ 2018+'-'+11}%`
             }
         },
-        order:[
-            ['id','DESC']
-        ],
-        group:['Nome'],
-        offset:0,
-        limit:5 
-       
+        group:['Data']
     });
-     
     
     res.render('pages/testeConteudo',{
         funcionarios

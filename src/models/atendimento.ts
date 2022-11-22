@@ -7,9 +7,15 @@ import { Trabalho } from './trabalho';
 
 
 export interface AtendimentoInstance extends Model{
-    id: number;
-    Nome: string;
-    email:string;
+    idAtendimento: number;
+    Data: string;
+    DataAno: string;
+    Hora_inicio: number;
+    Hora_fim: number;
+    Tempo_execucao: number;
+    funcionario_ID: number;
+    cliente_ID: number;
+    trabalho_ID: number;
 }
 
 export const Atendimento = sequelize.define<AtendimentoInstance>("Atendimento",{
@@ -19,6 +25,13 @@ export const Atendimento = sequelize.define<AtendimentoInstance>("Atendimento",{
     },
     Data:{
         type:DataTypes.STRING
+    },
+    DataAno:{
+        type:DataTypes.VIRTUAL,
+        get() {
+            
+            return 'ano';
+        }
     },
     Hora_inicio:{
         type:DataTypes.TIME

@@ -17,7 +17,7 @@
       <label  for="nome"></label>
       <select id="selecionado" class="cor_btn btn_padding" name="nome" >
         {{#funcionarios}}
-            <option value="{{id}}">{{Nome}}</option>
+            <option value="">{{total}}</option>
         {{/funcionarios}} 
       </select>     
     </div> 
@@ -25,9 +25,10 @@
 
     <ul> 
         {{#funcionarios}} 
-            <li><b>Identificador:</b>{{id}}</li>
-            <li><b> Nome:</b>{{Nome}}</li> 
-            <li><b> Email:</b>{{e-mail}}</li>
+            <li><b>DATA    : </b>{{Data}}</li>
+            <li><b>DATAaNO : </b>{{DATAaNO}}</li>
+            <li><b>HORA    : </b>{{ Hora_inicio}}</li>
+            <li><b>TOTAL   : </b>{{total}}</li> 
             <br> 
         {{/funcionarios}} 
     </ul> 

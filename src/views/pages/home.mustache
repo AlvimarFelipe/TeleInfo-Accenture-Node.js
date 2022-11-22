@@ -52,7 +52,7 @@
               <div class="mes">
               Mês
                 <label  for="dias"></label>
-                <select class="g1 cor_btn btn_padding month" name="dias" >
+                <select class="g1 cor_btn btn_padding monthg1" name="dias" >
               {{#datames}}
                     <option value="{{id}}">{{mes}}</option>
                 {{/datames}} 
@@ -62,7 +62,7 @@
               <div class="ano">
               Ano
                 <label  for="dias"></label>
-                <select class="g1 cor_btn btn_padding year" name="dias" >
+                <select class="g1 cor_btn btn_padding yearg1" name="dias" >
               {{#dataano}}
                     <option value="{{ano}}">{{ano}}</option>
                 {{/dataano}} 
@@ -75,7 +75,7 @@
             <div class="mes">
               Mês
               <label  for="dias"></label>
-              <select class="g1 cor_btn btn_padding month2" name="dias" >
+              <select class="g1 cor_btn btn_padding month2g1" name="dias" >
                 {{#datames}}
                     <option value="{{id}}">{{mes}}</option>
                 {{/datames}} 
@@ -85,7 +85,7 @@
             <div class="ano">
               Ano
               <label  for="dias"></label>
-              <select class="g1 cor_btn btn_padding year2" name="dias" >
+              <select class="g1 cor_btn btn_padding year2g1" name="dias" >
                 {{#dataano}}
                     <option value="{{ano}}">{{ano}}</option>
                 {{/dataano}} 
@@ -94,8 +94,8 @@
           </div> 
 
         </div>
-
-        <div id="canvaGG">
+ 
+        <div id="grafico1">
        
         </div>
       </div>
@@ -125,7 +125,7 @@
               </select>     
             </div> 
           </div> 
-        <canvas id="grafico1" class="grafico"></canvas>
+        <canvas id="grafico2" class="grafico"></canvas>
       </div>
 
 
@@ -135,7 +135,7 @@
           <div><input class="cor_btn" type="button" value="Ver Relatório">
           </div>
         </div>
-        <canvas id="grafico2" class="grafico"></canvas>
+        <canvas id="grafico3" class="grafico"></canvas>
       </div>
 
 
@@ -173,7 +173,7 @@
               </select>     
             </div> 
           </div> 
-        <canvas id="grafico3" class="grafico"></canvas>
+        <canvas id="grafico4" class="grafico"></canvas>
       </div>
       
 
@@ -195,7 +195,9 @@
 
     <script src="https://kit.fontawesome.com/32b09ec398.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/js/dadosGraficos.js"></script>
-    <script src="/js/filtro_graficos.js"></script>
+    <script src="/js/dadosGrafico1.js"></script>
+    <script src="/js/dadosGrafico2.js"></script>
+    <script src="/js/dadosGrafico3.js"></script>
+    <script src="/js/dadosGrafico4.js"></script>
   </body>
 </html>
