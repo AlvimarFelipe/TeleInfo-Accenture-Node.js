@@ -12,7 +12,9 @@ export const app = ( upload.array(), (req: Request, res: Response) => {
 
     g1_mes=req.body.g1_mes
     g1_ano=req.body.g1_ano
-    id = req.body.id;
-    res.send('Result : '+ id);
+    id = req.query.id;
+    let mes = req.query.mes;
+
+    res.send('Result : '+ id +""+ mes);
     
 });

@@ -4,73 +4,99 @@
 
 
 
-const url = "http://localhost:2000/dadosgraficos"
-          
-fetch(url)
-.then((response) => {
-return response.json();
-})
-.then((data) => {
-    dados = data;
-    console.log(dados['data_graf'])
-
-    document.querySelector('.year').value = dados['data_graf'][0]
-    document.querySelector('.month').value = dados['data_graf'][1]
+const graficos_1 = document.getElementsByClassName('g1');
  
+for (const grafico of graficos_1) {    
+  grafico.addEventListener('change', (e) => {   
+    renderizarGrafico(graficos_1[0].value,graficos_1[1].value,graficos_1[2].value,graficos_1[3].value )
+  })
+}
 
-    var primeiros =[];
-    var segundo =[];
+function renderizarGrafico(mes,ano,mes2,ano2){  
+          
+  fetch("http://localhost:2000/dadosgraficos?mes="+mes+"&ano="+ ano + "&mes2="+mes2+"&ano2="+ ano2)
+  .then((response) => {
+  return response.json();
+  })
+  .then((data) => {
+      dados = data;  
 
-    for(let i=0;i < dados['funcionarios'].length;i++){
-      primeiros.push(dados['funcionarios'][i]['Data']) 
-      segundo.push(dados['funcionarios'][i]['total']) 
-    }
+      
+      document.querySelector('.year').value = dados['data_graf'][0]
+      document.querySelector('.month').value = dados['data_graf'][1]
+      document.querySelector('.year2').value = dados['data_graf'][2]
+      document.querySelector('.month2').value = dados['data_graf'][3]
     
-  console.log(dados['funcionarios'].length)
+      var primeiros =[];
+      var segundo =[];
   
-    var yValues2= data['grafico1_yValues2'];
+      for(let i=0;i < dados['funcionarios'].length;i++){
+        primeiros.push(dados['funcionarios'][i]['Data']) 
+        segundo.push(dados['funcionarios'][i]['total']) 
+      }      
     
-    new Chart(document.getElementById("grafico0"), {
-        type: 'bar',
-        data: {
-          labels:primeiros,
-          datasets: [
-            {
-              label: "Últimos 7 dias",
-              backgroundColor:["#8C4AF4"],
-              data: segundo
-            }, {
-              label: "Últimos 15 dias",
-              backgroundColor: ["#E6E8EC"],
-              data: yValues2,
-            }
-          ]
-        },
-        options: 
-        {
-          legend: { display: false},
-          title: {
-            display: true,
-            text: 'Predicted world population (millions) in 2050'
+    
+      var yValues2= dados['funcionarios2'];
+      var valores2 = []
+      for(let i=0;i < dados['funcionarios2'].length;i++){
+        valores2.push(dados['funcionarios2'][i]['total']) 
+       
+      }     
+      console.log(yValues2)
+      
+      let canvas = document.createElement('canvas');      
+      canvas.classList.add('grafico');
+      canvas.id = 'grafico0';   
+     
+    
+        new Chart(canvas, {
+          type: 'bar',
+          data: {
+            labels:primeiros,
+            datasets: [
+              {
+                label: "Últimos 7 dias",
+                backgroundColor:["#8C4AF4"],
+                data: segundo
+              }, {
+                label: "Últimos 15 dias",
+                backgroundColor: ["#E6E8EC"],
+                data: valores2,
+              }
+            ]
           },
-          plugins: {
-            legend: {
-                position: 'bottom',
-                align:'start'
+          options: 
+          {
+            legend: { display: false},
+            title: {
+              display: true,
+              text: 'Predicted world population (millions) in 2050'
+            },
+            plugins: {
+              legend: {
+                  position: 'bottom',
+                  align:'start'
+              }
             }
           }
-        }
-    });
-  }
-);
+      });
+      document.querySelector('#canvaGG').innerHTML = ""
+      document.querySelector('#canvaGG').appendChild(canvas);
+      
+    }
+  ); 
+  
+}
 
+
+renderizarGrafico("11","2018","12","2018");
 
 
 
 //Gráfico de Linha
 //Gráfico 2
 
-
+const url = "http://localhost:2000/dadosgraficos"
 fetch(url)
 .then((response) => {
 return response.json();
@@ -97,6 +123,7 @@ return response.json();
     gradiant2.addColorStop(0,'rgba(252, 103, 104, 0.56)');
     gradiant2.addColorStop(1,'rgba(252, 103, 104, 0)');
 
+    
     new Chart(document.getElementById("grafico1"), {
         type: 'line',
         data: {
