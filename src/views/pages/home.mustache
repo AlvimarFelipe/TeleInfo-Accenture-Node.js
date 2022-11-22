@@ -52,9 +52,9 @@
               <div class="mes">
               Mês
                 <label  for="dias"></label>
-                <select class="g1 cor_btn btn_padding" name="dias" >
+                <select class="g1 cor_btn btn_padding month" name="dias" >
               {{#datames}}
-                    <option value="{{mes}}">{{mes}}</option>
+                    <option value="{{id}}">{{mes}}</option>
                 {{/datames}} 
                 </select>     
             </div> 
@@ -62,7 +62,7 @@
               <div class="ano">
               Ano
                 <label  for="dias"></label>
-                <select class="g1 cor_btn btn_padding" name="dias" >
+                <select class="g1 cor_btn btn_padding year" name="dias" >
               {{#dataano}}
                     <option value="{{ano}}">{{ano}}</option>
                 {{/dataano}} 
@@ -75,9 +75,9 @@
             <div class="mes">
               Mês
               <label  for="dias"></label>
-              <select class="g2 cor_btn btn_padding" name="dias" >
+              <select class="g1 cor_btn btn_padding month2" name="dias" >
                 {{#datames}}
-                    <option value="{{mes}}">{{mes}}</option>
+                    <option value="{{id}}">{{mes}}</option>
                 {{/datames}} 
               </select>     
             </div> 
@@ -85,7 +85,7 @@
             <div class="ano">
               Ano
               <label  for="dias"></label>
-              <select class="g2 cor_btn btn_padding" name="dias" >
+              <select class="g1 cor_btn btn_padding year2" name="dias" >
                 {{#dataano}}
                     <option value="{{ano}}">{{ano}}</option>
                 {{/dataano}} 
@@ -95,8 +95,8 @@
 
         </div>
 
-        <div>
-          <canvas id="grafico0" class="grafico"></canvas>
+        <div id="canvaGG">
+       
         </div>
       </div>
 
@@ -196,5 +196,6 @@
     <script src="https://kit.fontawesome.com/32b09ec398.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/js/dadosGraficos.js"></script>
+    <script src="/js/filtro_graficos.js"></script>
   </body>
 </html>

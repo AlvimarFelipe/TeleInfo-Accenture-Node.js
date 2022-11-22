@@ -1,38 +1,47 @@
 import { Request, Response } from 'express';
 import sequelize, { Op } from 'sequelize';
 import { Atendimento } from '../models/atendimento';
-
-
-var mes1: String = '11'
-var ano1: String = '2018'
-export let myAdd = function (mes: String, ano: String) {
-    mes1= mes;
-    ano1=ano;
-       
-
-};
-
-
   
 export const data = async (req: Request, res: Response)=>{
 
-        var filtro = ano1+'-'+mes1
+        let ano1 = req.query.ano;
+        let mes1 = req.query.mes;
+
+        let ano2 = req.query.ano2;
+        let mes2 = req.query.mes2;   
      
         let funcionarios = await Atendimento.findAll({
-        attributes:['Data','idAtendimento', [sequelize.fn('count', sequelize.col('idAtendimento')), 'total']],
-        raw: true,
-        where:{
-            Data:{
-                [Op.like]: `%${filtro}%`
-            }
-        },
-        group:['Data']
-    });
+            attributes:['Data','idAtendimento', [sequelize.fn('count', sequelize.col('idAtendimento')), 'total']],
+            raw: true,
+            where:{
+                Data:{
+                    [Op.like]: `%${ ano1+'-'+mes1}%`
+                }
+            },
+            group:['Data']
+        });
+
+        
+        let funcionarios2 = await Atendimento.findAll({
+            attributes:['Data','idAtendimento', [sequelize.fn('count', sequelize.col('idAtendimento')), 'total']],
+            raw: true,
+            where:{
+                Data:{
+                    [Op.like]: `%${ano2+'-'+mes2}%`
+                }
+            },
+            group:['Data']
+        });
+        
+        
 
     res.json({ 
         funcionarios,
-        data_graf: [ano1,mes1],
-        grafico1_yValues2: [18, 10, 10, 18, 14, 17, 20, 7],
+        funcionarios2,
+        data_graf: [ano1,mes1,ano2,mes2],
+
+
+       
 
         grafico2_xValues1: ["6h","8h","10h","12h","14h","16h","18h","20h","22h","0h"], 
         grafico2_yValues1: [5,6,7,7,6,6,8,9,10,10],
