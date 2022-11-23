@@ -1,6 +1,6 @@
 
 import { Model, DataTypes } from 'sequelize';
-import { sequelize } from '../instances/mysql';
+import { sequelizes } from '../instances/mysql';
 
 
 export interface TrabalhoInstance extends Model{
@@ -9,7 +9,7 @@ export interface TrabalhoInstance extends Model{
     email:string;
 }
 
-export const Trabalho = sequelize.define<TrabalhoInstance>("Trabalho",{
+export const Trabalho = sequelizes.define<TrabalhoInstance>("Trabalho",{
     id:{
         primaryKey:true,
         type: DataTypes.INTEGER

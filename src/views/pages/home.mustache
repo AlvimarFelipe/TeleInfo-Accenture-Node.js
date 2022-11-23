@@ -52,20 +52,20 @@
               <div class="mes">
               Mês
                 <label  for="dias"></label>
-                <select class="g1 cor_btn btn_padding monthg1" name="dias" >
-              {{#datames}}
-                    <option value="{{id}}">{{mes}}</option>
-                {{/datames}} 
+                <select class="g1 cor_btn btn_padding monthg1 meses" name="dias" >
+        
                 </select>     
             </div> 
 
               <div class="ano">
               Ano
                 <label  for="dias"></label>
-                <select class="g1 cor_btn btn_padding yearg1" name="dias" >
-              {{#dataano}}
-                    <option value="{{ano}}">{{ano}}</option>
-                {{/dataano}} 
+                <select class="g1 cor_btn btn_padding yearg1 year" name=".monthg1" >
+        
+             
+                    <option value="2018">2018</option> 
+                    <option value="2019">2019</option> 
+      
                 </select>     
             </div> 
           </div> 
@@ -75,20 +75,20 @@
             <div class="mes">
               Mês
               <label  for="dias"></label>
-              <select class="g1 cor_btn btn_padding month2g1" name="dias" >
-                {{#datames}}
-                    <option value="{{id}}">{{mes}}</option>
-                {{/datames}} 
+              <select class="g1 cor_btn btn_padding month2g1 meses"  name="dias" >
+         
+           
               </select>     
             </div> 
 
             <div class="ano">
               Ano
               <label  for="dias"></label>
-              <select class="g1 cor_btn btn_padding year2g1" name="dias" >
-                {{#dataano}}
-                    <option value="{{ano}}">{{ano}}</option>
-                {{/dataano}} 
+              <select class="g1 cor_btn btn_padding year2g1 year" name=".month2g1" >
+              
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+              
               </select>     
             </div> 
           </div> 
@@ -108,9 +108,9 @@
             <div class="mes">
               Mês
               <label  for="dias"></label>
-              <select class="cor_btn btn_padding" name="dias" >
+              <select class=" g2 cor_btn btn_padding monthg2" name="dias" >
                 {{#datames}}
-                    <option value="{{mes}}">{{mes}}</option>
+                    <option value="{{id}}">{{mes}}</option>
                 {{/datames}} 
               </select>     
             </div> 
@@ -118,14 +118,14 @@
             <div class="ano">
               Ano
               <label  for="dias"></label>
-              <select class="cor_btn btn_padding" name="dias" >
+              <select class="g2 cor_btn btn_padding year2" name=".monthg2" >
                 {{#dataano}}
                     <option value="{{ano}}">{{ano}}</option>
                 {{/dataano}} 
               </select>     
             </div> 
           </div> 
-        <canvas id="grafico2" class="grafico"></canvas>
+          <div class="box2"></div>
       </div>
 
 

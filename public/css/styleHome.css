@@ -37,8 +37,8 @@
 #canvas1{
     max-height: 250px;
 }
-#grafico2{
-    max-height: 250px
+#canvas2{
+    height: 250px;
 }
 #grafico3{
     max-height: 250px
@@ -46,6 +46,7 @@
 #grafico4{
     max-height: 250px
 }
+
 
 /* Grid */
 .container{
@@ -230,6 +231,7 @@
 }
 .espacamento_2{
     padding: 50px;
+    max-width: 80vw;
 }
 .espacamento_3{
     padding: 0px 50px 0px 50px;

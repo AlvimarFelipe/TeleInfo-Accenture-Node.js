@@ -1,9 +1,9 @@
 //Gráfico de piza : Horário de Pico
 //Gráfico 3
 
+        
 
-
-          
+const url = "/dadosgraficos"
 fetch(url)
 .then((response) => {
 return response.json();

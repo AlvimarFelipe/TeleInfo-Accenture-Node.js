@@ -28,7 +28,6 @@ type data2 = {
 export const dataano: data2[] = [
     {di:1 ,ano:2018},
     {di:2 ,ano:2019},
-    {di:3 ,ano:2020},
 
 ];
 
