@@ -30,6 +30,7 @@ return response.json();
         },
         options: 
         {
+          responsive:false,
           legend: { display: false},
           title: {
             display: true,

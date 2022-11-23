@@ -96,6 +96,7 @@ function renderizarGrafico2(mes,ano){
           },
           options: 
           {
+            responsive:false,
             legend: { display: false ,position:'botton' },
             title: {
               display: true,

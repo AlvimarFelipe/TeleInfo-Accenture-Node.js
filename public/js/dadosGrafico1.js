@@ -98,8 +98,7 @@ function renderizarGrafico(mes,ano,mes2,ano2){
           {
             legend: { display: false},
             title: {
-              display: true,
-              text: 'Predicted world population (millions) in 2050'
+              display: true
             },
             plugins: {
               legend: {

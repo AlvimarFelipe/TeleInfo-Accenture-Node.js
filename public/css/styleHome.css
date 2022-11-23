@@ -5,6 +5,7 @@
     margin: 0px;
     padding: 0px ;
     box-sizing: border-box !important;
+    overflow-x: hidden;
 }
 
 .item{
@@ -36,9 +37,12 @@
 
 #canvas1{
     max-height: 250px;
+    width: 100%;
 }
 #canvas2{
+    min-height: 250px;
     height: 250px;
+    max-height: 250px;
 }
 #grafico3{
     max-height: 250px
@@ -55,8 +59,8 @@
             "logo cabeca cabeca cabeca cabeca cabeca"
             "logo cabeca cabeca cabeca cabeca cabeca"
             "hr1 hr1 hr1 hr1 hr1 hr1 "
-            "menu1 gra1 gra1 gra1 gra1 gra1"
-            "menu1 gra1 gra1 gra1 gra1 gra1"
+            "menu1 menu1 gra1 gra1 gra1 gra1"
+            "menu1 menu1 gra1 gra1 gra1 gra1"
             "ajuste hr2 hr2 hr2 hr2 hr2"
             "ajuste gra2 gra2 gra2 gra3 gra3"
             "ajuste gra2 gra2 gra2 gra3 gra3"
@@ -231,7 +235,7 @@
 }
 .espacamento_2{
     padding: 50px;
-    max-width: 80vw;
+
 }
 .espacamento_3{
     padding: 0px 50px 0px 50px;
