@@ -27,9 +27,9 @@ import { sequelizes } from '../instances/mysql';
 
 export const conteudo = async (req: Request, res: Response)=>{
   
-    var  ano = '2018'
-
-    const records2 = await sequelizes.query('SELECT  count(a.idAtendimento) AS id , a.data FROM atendimento a INNER JOIN trabalho t ON  t.id = a.trabalho_ID where t.Tempo_medio <= 2400  && a.data LIKE '+`"${ano}%"`+' group by a.data order by a.data;', {
+    var  ano = '2018-11'
+    var t ="t.Tempo_medio <= 2400";
+    const records2 = await sequelizes.query('select  count(a.idAtendimento), a.data, SUBSTRING(a.data, 6,2) AS mes ,a.Hora_inicio from atendimento a inner join trabalho t on  t.id = a.trabalho_ID  where  ('+`${t}`+' && a.data like '+`"${ano}%"`+')  &&  (a.Hora_inicio >= "00:00:01" && a.Hora_inicio < "06:00:00") group by mes order by a.Hora_inicio;', {
         type: QueryTypes.SELECT
       });
     res.render('pages/testeConteudo', {

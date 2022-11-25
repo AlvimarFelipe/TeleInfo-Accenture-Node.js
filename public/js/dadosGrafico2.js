@@ -112,7 +112,7 @@ function renderizarGrafico2(mes,ano){
               intersect: false
             }
           }
-      });   
+      }); 
     }
   ); 
 }

@@ -84,12 +84,12 @@ function renderizarGrafico(mes,ano,mes2,ano2){
             labels:titulo,
             datasets: [
               {
-                label: "Últimos 7 dias",
+                label: "",
                 backgroundColor:["#8C4AF4"],
                 data: primeiro
               }, {
-                label: "Últimos 15 dias",
-                backgroundColor: ["#E6E8EC"],
+                label: "",
+                backgroundColor: ["rgba(249, 166, 68)"],
                 data: segundo,
               }
             ]

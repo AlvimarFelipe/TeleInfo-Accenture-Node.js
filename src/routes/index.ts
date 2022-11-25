@@ -6,9 +6,8 @@ import * as cadastroController from '../controllers/cadastroController';
 import * as HomeController from '../controllers/homeController';
 import * as testeController from '../controllers/testeController';
 
-import * as Grafico1Controller from '../controllers/dadosGraficos/Grafico1Controller';
-
-import * as selectController from '../controllers/selectGraficos/selectController';
+import * as Grafico1Controller from '../controllers/GraficosController';
+import * as selectController from '../controllers/selectDataGraficoController';
 
 
 const router = Router();
@@ -22,6 +21,7 @@ router.get('/teste',testeController.conteudo);
 
 router.get('/dadosgraficos',Grafico1Controller.data1);
 router.get('/dadosgraficos2',Grafico1Controller.data2);
+router.get('/dadosgraficos3',Grafico1Controller.data3);
 
 
 

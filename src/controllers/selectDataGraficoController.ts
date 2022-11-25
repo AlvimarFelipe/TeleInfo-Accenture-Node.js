@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import sequelize, { Op, QueryTypes } from 'sequelize';
-import { sequelizes } from '../../instances/mysql';
+import { sequelizes } from '../instances/mysql';
 
 // For POST-Support
 const multer = require('multer');

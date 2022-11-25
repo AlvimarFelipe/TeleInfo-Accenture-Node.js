@@ -159,3 +159,6 @@ body {
 .user-box input:placeholder {
     color: #0000000c;
 }
+.box3{
+    display: flex !important;
+}

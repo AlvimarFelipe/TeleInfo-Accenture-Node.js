@@ -4,7 +4,7 @@
 //Gráfico4
 //
 
-
+let url = "http://localhost:2000/dadosgraficos3"
 
 fetch(url)
 .then((response) => {
