@@ -1,24 +1,3 @@
-/* Config geral */
-
-
-*{
-    margin: 0px;
-    padding: 0px ;
-    box-sizing: border-box !important;
-    overflow-x: hidden;
-}
-
-.item{
-    background-color: #fff;
-    color: #000;
-    letter-spacing: 0.5px;
-    font-size: 20px;
-    font-family: 'poppins_400';
-    
-}
-
-/* Fontes */
-
 @font-face {
     font-family: 'poppins_400';
     src: url('/Fontes/Poppins-Regular.ttf') format('truetype');
@@ -29,245 +8,74 @@
     src: url('/Fontes/Poppins-Medium.ttf') format('truetype');
 }
 
-.negrito{
-    font-family: 'poppins_500';
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'poppins_400';
+    box-sizing: border-box;    
 }
-
-/* Config Graficos */
-
-#canvas1{
-    max-height: 250px;
-    width: 100%;
+#canvas1,#canvas3,#canvas4,#canvas5,#canvas6,#canvas7,#canvas8{
+    max-height: 36vh;
 }
 #canvas2{
-    min-height: 250px;
-    height: 250px;
-    max-height: 250px;
-}
-#grafico3{
-    max-height: 250px
-}
-#grafico4{
-    max-height: 250px
+   width: 50vw ;
 }
 
-
-/* Grid */
-.container{
-    display: grid;
-    grid-template-areas: 
-            "logo cabeca cabeca cabeca cabeca cabeca"
-            "logo cabeca cabeca cabeca cabeca cabeca"
-            "hr1 hr1 hr1 hr1 hr1 hr1 "
-            "menu1 menu1 gra1 gra1 gra1 gra1"
-            "menu1 menu1 gra1 gra1 gra1 gra1"
-            "ajuste hr2 hr2 hr2 hr2 hr2"
-            "ajuste gra2 gra2 gra2 gra3 gra3"
-            "ajuste gra2 gra2 gra2 gra3 gra3"
-            "ajuste hr3 hr3 hr3 hr3 hr3"
-            "ajuste gra4 gra4 gra4 gra4 gra4"
-            "ajuste gra4 gra4 gra4 gra4 gra4"
-    ;
+#menux{
+    background-color: cyan;
+    position: fixed;
+    padding: 10px;
+    width: 100%;
+    height: 60px;
+    z-index: 1;
 }
-
-/* Posicionamento elementos na Grid */
-
-.grid1{
-    grid-area: logo;
+#menuy{
+    background-color: red; 
+    width: 15%; 
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top:60px; 
+    z-index: 1;
 }
-.grid2{
-    grid-area: cabeca;
-}
-.grid3{
-    grid-area: menu1;
-}
-.grid4{
-    grid-area: gra1;
-}
-.grid5{
-    grid-area: gra2;
-}
-.grid6{
-    grid-area: gra3;
-}
-.grid7{
-    grid-area: gra4;
-}
-.grid8{
-    grid-area: ajuste;
-}
-.grid9{
-    grid-area: hr1;
+#conteudo{
     
-}
-.grid10{
-    grid-area: hr2;
-}
-.grid11{
-    grid-area: hr3;
-}
+    width: 70%; 
+    position: relative;
+    top: 90px;
+    left: 22.5%;
 
-
-
-.flex{
+}
+#box0{
+    background-color:coral;
+    height:40vh;
+}
+.box3{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    justify-content: space-around;
+   
 }
-
-.hr1 > hr{
-    margin: 0px ;
+.tamanho{
+    height: 34vh;
 }
-.nav{
-    background-color: #f1f2f7;
-    padding: 10px;
-    border-radius: 10px;
-    box-sizing: border-box;
+.line{
+    margin: 40px 0; 
 }
-.nav > a{
-    text-decoration: none;
-}
+.selects{
 
-.nav > a:visited{
-    text-decoration: none;
-    color: rgba(192, 81, 17, 0.596);
-
-    color: #082431;
-    opacity: 0.5;
-    letter-spacing: 0.5px;
-}
-
-
-/* logo */
-
-.logo{
-    color: #8C4AF4;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-
-}
-.vertical_logo{
-    vertical-align: 11.5px;
-}
-.img_logo{
-    width: 40px;
-}
-.background_menu_logo{
-    background: linear-gradient(rgba(161, 98, 247, 0.4) , rgba(131, 130, 222, 0) );
-}
-
-/*perfil */
-
-.profile{
-    color: #F9A644;
-}
-.config-perfil{
-    border-color: #fff;
-    font-size: 1em;
-}
-.bell{
-    color:#B0C3CC;
-}
-
-
-/* Menu em geral  */
-
-.cor_menu{
-    color: #082431;
-    opacity: 0.6;
-    letter-spacing: 0.5px;
-    background-color: #f1f2f7;
-    width: 250px;
-}
-
-
-/* Menu */
-
-.cor_btn{
-    color: #8C4AF4;
-    background: #FBFCFE;
-    border: 0.5px solid #DDE4F0;
-    box-shadow: 0px 2px 1px rgba(64, 72, 82, 0.05);
-    border-radius: 5px;
-    outline: none;
-    padding: 5px;
-}
-
-.btn_padding{
-    padding: 5px 5px 5px 25px;
-
-}
-
-.cor_btn_menu:hover ,.cor_btn_menu:hover > i { 
-    color: #8C4AF4 !important;
-    border-radius: 5px;
-}
-.icone_alinamento{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+ 
 }
-.gira{
-    transform: rotate(90deg);
+.selects > .data{
+    min-width: 250px;
 }
-
-.icon{
-    color:#A6ABC8;
+.selects > h2{
+    white-space: nowrap;
 }
-
-.select_dias{
-  display: flex;
-}
-.dias{
-  margin-right: 10px;
-}
-.divisao{
-  width: 2px;
-  height: 4vh;
-  background: #9A9A9A;
-  margin-right: 10px;
-}
-
-/* Espacamento */
-
-.espacamento_menu{
-    padding:20px;
-}
-.espacamento_2{
-    padding: 50px;
-
-}
-.espacamento_3{
-    padding: 0px 50px 0px 50px;
-}
-.espacamento_4{
-    padding: 0px 100px 0px 10px;
-}
-
-
-
-
-/* Responsividade */
-
-@media (max-width:750px){
-    .container{
-        grid-template-areas: 
-        "logo logo logo "
-        "cabeca cabeca cabeca"
-        "hr1 hr1 hr1"
-        "menu1 menu1 menu1"
-        "ajuste ajuste ajuste"
-        "gra1 gra1 gra1"
-        "gra2 gra2 gra2"
-        "gra3 gra3 gra3"
-        "gra4 gra4 gra4"
-        "hr2 hr2 hr2"
-        "hr3 hr3 hr3"
-        ;
-    }
-
-    .cor_menu{
-        width: auto;
-    }
-
+.diferente{
+    margin-left: 100px;
 }

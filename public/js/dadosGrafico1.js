@@ -108,8 +108,8 @@ function renderizarGrafico(mes,ano,mes2,ano2){
             }
           }
       });
-      document.querySelector('#grafico1').innerHTML = ""
-      document.querySelector('#grafico1').appendChild(canvas);
+      document.querySelector('.box1').innerHTML = ""
+      document.querySelector('.box1').appendChild(canvas);
       
     }
   ); 
@@ -132,6 +132,8 @@ for (const selectAno of selectsAno) {
 
 function carregarSelect(selectAno){  
   fetch("http://localhost:2000/selectdata?ano="+selectAno.value,)
+
+ 
   .then((response) => {
     return response.json();
     })
@@ -141,13 +143,19 @@ function carregarSelect(selectAno){
       let organizado = meses['selectdata'];
       let select = document.querySelector(selectAno.name)
       select.innerHTML = ""
-      for(let i=0;i<organizado.length;i++){     
+      for(let i=0;i<organizado.length;i++){   
+        
+
         
         let opcao = document.createElement('option');
       
         opcao.value = organizado[i]['mes'];
         opcao.innerHTML = nomesMeses[Number(organizado[i]['mes'])-1];
-        opcao.selected = true;
+        if (i==0 && selectAno.name == '.monthg1') {
+          opcao.selected = true;
+        }else if ( selectAno.name != '.monthg1'){
+          opcao.selected = true;
+        }
 
         select.appendChild(opcao);  
     

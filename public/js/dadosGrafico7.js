@@ -15,19 +15,17 @@ for (const grafico of year4) {
   })
 }
 
-function renderizarGrafico4(nome,mes,ano){   
+function renderizarGrafico4(mes,ano){   
  
-  fetch("http://localhost:2000/dadosgraficos4?mes="+mes+"&ano="+ ano+"&nome=AMB1")
+
+  fetch("http://localhost:2000/dadosgraficos4?mes="+mes+"&ano="+ ano)
   .then((response) => {
   return response.json();
   })
   .then((data) => {
       dados = data;
 
-      console.log(dados['faceis'][0])
-
-      
-      
+      console.log(dados)
 
 
 
@@ -41,8 +39,8 @@ function renderizarGrafico4(nome,mes,ano){
       canvas.id = 'canvas7'; 
 
 
-     
-      new Chart(canvas, {
+      var ctx =canvas.getContext('2d');
+      new Chart(document.getElementById("grafico4"), {
           type: 'bar',
           data: {
             labels:xValues1,
@@ -86,9 +84,6 @@ function renderizarGrafico4(nome,mes,ano){
           }
           }
       });
-
-      document.querySelector('.box4').innerHTML = ""
-      document.querySelector('.box4').appendChild(canvas);
 
   }
   );
@@ -156,6 +151,7 @@ function renderizarNome(mes,ano){
    
 
     let nome = dados['nome']
+    console.log(nome)
     let select = document.querySelector(".nameg4")
     select.innerHTML = ""
     for(let i=0;i<nome.length;i++){   
