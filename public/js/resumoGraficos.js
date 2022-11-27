@@ -50,4 +50,21 @@ document.querySelector('.nameg8').addEventListener('change',() =>{
   let ano = document.querySelector('.year8').value;
   let mes = document.querySelector('.monthg8').value;
   renderizarResumo(nome,mes,ano)
-})
+});
+
+
+const boxIcon = document.querySelector('.box-icon')
+const icon = document.querySelector('.icone')
+boxIcon.addEventListener('click', () =>{
+
+  if (icon.classList.contains('bi-caret-down-fill')){   
+    icon.classList.remove('bi-caret-down-fill')
+    icon.classList.add('bi-caret-up-fill')
+    document.querySelector('.resumo').classList.remove('none');
+  }else{
+    icon.classList.remove('bi-caret-up-fill')
+    icon.classList.add('bi-caret-down-fill')   
+    document.querySelector('.resumo').classList.add('none');
+  }
+ 
+});

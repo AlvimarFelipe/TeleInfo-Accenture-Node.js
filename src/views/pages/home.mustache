@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/styleHome.css">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
+     <link rel="stylesheet" href="/css/styleHome.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <title>Reforma Accenture</title>
   </head>
   <body>
@@ -25,13 +27,13 @@
           <div class="flex espaco-menu-x2">
               <h1>Dashboards</h1>
             <div>
-              <i class="fa-solid fa-circle-user profile"></i>
+              <i class="bi bi-person-circle"></i>
               <label for="config_perfil"></label>
               <select class="config-perfil" name="config_perfil" >
                   <option value="" selected>Perfil admin</option>
                   <option value=""></option>
               </select>
-              <i class="fa-solid fa-bell"></i>
+              <i class="bi bi-bell-fill"></i>
             </div>
           </div>
         </div>
@@ -62,21 +64,20 @@
       <section id="box0">
 
         <div class=" principal-0">
-          <div class="flex">
-            <h2>Resumo</h2>
+          <div class="flex beetwen">
+            <p class="bt-text">Resumo</p>         
             <div>
-              <select class="monthResumo">
+              <select class="monthResumo selectResume"></select>
+             <span class="bt-text">de</span>   
+              <select class="yearResumo selectResume" name=".monthResumo">
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
               </select>
             </div>
-            <div>
-              <select class="yearResumo" name=".monthResumo">
-                <option value="">2018</option>
-                <option value="">2019</option>
-              </select>
-            </div>
+            <span class="box-icon"><i class="bi bi-caret-up-fill icone"></i>  </span>   
           </div>
           
-          <div class="resumo none">
+          <div class="resumo">
             <div class="">
               <h3>Quantidade de Chamadas Por:</h3>
               <div class="toatal">
@@ -183,7 +184,7 @@
         </div>
 
       </section>
-      <hr class="line">
+      <hr class="line fline">
 
       <!-- Graficos -->
 
@@ -331,9 +332,11 @@
 
      <script src="https://kit.fontawesome.com/32b09ec398.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="/node_modules/bootstrap-icons/font/bootstrap-icons.json"></script>
     <script src="/js/dadosGrafico1.js"></script>
     <script src="/js/dadosGrafico2.js"></script>
     <script src="/js/dadosGrafico3_4_5_6.js"></script>
+
 
     <script src="/js/dadosGrafico7.js"></script>
     <script src="/js/dadosGrafico8.js"></script>
