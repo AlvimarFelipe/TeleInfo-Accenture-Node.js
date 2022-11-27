@@ -5,180 +5,338 @@
     <link rel="stylesheet" href="/css/styleHome.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
     <title>Reforma Accenture</title>
   </head>
-  <body>  
-    
+  <body>
+
 
     {{!  Menu Horizontal  }}
-    <section id="menux">
-           <div class="grid1 item espacamento_menu background_menu_logo">
-        <div class="logo"><img class="img_logo" src="/imagens/logo.svg"><span class="vertical_logo">Teleinfo</span></div>
+    <section id="menux" >
+
+      <div class="white">
+        <div class="flex">
+          <div class="flex logo">
+              <div>
+                <img class="img_logo" src="/imagens/logo.svg">
+                <span class="vertical_logo">Teleinfo</span>
+              </div>
+          </div>
+          <div class="flex espaco-menu-x2">
+              <h1>Dashboards</h1>
+            <div>
+              <i class="fa-solid fa-circle-user profile"></i>
+              <label for="config_perfil"></label>
+              <select class="config-perfil" name="config_perfil" >
+                  <option value="" selected>Perfil admin</option>
+                  <option value=""></option>
+              </select>
+              <i class="fa-solid fa-bell"></i>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>    
+
+    </section>
+
+
 
     {{!  Menu vertical  }}
     <section id="menuy">
-        adfdfadf
+
+      <div class="body-menu">
+        <p class="m-menu">Menu</p>
+        <p class="nav"><a class="cor_btn_menu" href=""> <i class="fa-solid fa-chart-simple icon "></i> Dashboards</a>
+        <p class="nav"><a href=""class="cor_btn_menu"> <i class="fa-solid fa-chart-simple gira icon "></i> Relatórios</a>
+        <hr class="line">
+        <p class="nav"><a href="" class="cor_btn_menu"> <i class="fa-solid fa-gear icon"></i> Ajuste</a></p>
+        <p class="nav"><a href="" class="cor_btn_menu"> <i class="fa-solid fa-user icon"></i> Perfis</a></p>
+        <p class="nav"><a href="" class="cor_btn_menu"> <i class="fa-solid fa-circle-info icon"></i> Ajuda</a></p>
+      </div>
+
     </section>
-    
-    <!-- Graficos -->
+
     <section id="conteudo">
-        <div id="box0">
 
+      {{!   Resumo   }}
+      <section id="box0">
 
-        </div>
-        <hr class="line">
-
-        {{! Inicio primeiro grafico }}
-
-        {{! select Grafico 1 }}
-        <section class="selects">
-          <h2>Chamados</h2>
-          
-          {{!   data 1   }}
-          <div class="data ">
-            <span>mes</span>
-            <select  class="meses g1 monthg1" >
-      
-            </select>
-            <span>ano</span>
-            <select class="g1 year yearg1" name=".monthg1">
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-            </select>
-
-            {{!   data 2   }}
-            <span class="diferente">mes</span>
-            <select class="meses g1 month2g1">
-    
-            </select>
-            <span>ano</span>
-            <select class="g1 year year2g1" name=".month2g1">
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-            </select>
-
-          </div>
-        </section>
-
-        <div class="box1">
-        
-        </div>
-        <hr class="line">
-
-        
-        {{! Inicio segundo grafico }}
-
-        {{! select Grafico 2 }}
-        <section class="selects">
-          <h2>Prioridade do Chamado</h2>
-          <div class="data">
-
-            <span>mes</span>
-            <select  class="monthg2 g2">
-             
-            </select>
-            <span>ano</span>
-            <select  class="year2 g2" name=".monthg2">        
-             <option value="2018">2018</option>
-             <option value="2019">2019</option>
-            </select>
-
-          </div>
-        </section>
-        <div class="box2"></div>
-
-        
-          <hr class="line">
-
-          {{! Inicio tres grafico }}
-
-          {{! select Grafico 3 }}
-          <section class="selects">
-            <h2>Horário de Pico</h2>
-            <div class="data">
-              
-              <span>mes</span>
-              <select class="monthg3 g3"></select>
-
-              <span>ano</span>
-              <select class="year3 g3" name=".monthg3">
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
+        <div class=" principal-0">
+          <div class="flex">
+            <h2>Resumo</h2>
+            <div>
+              <select class="monthResumo">
               </select>
-              
             </div>
-          </section>
+            <div>
+              <select class="yearResumo" name=".monthResumo">
+                <option value="">2018</option>
+                <option value="">2019</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="resumo none">
+            <div class="">
+              <h3>Quantidade de Chamadas Por:</h3>
+              <div class="toatal">
+                <h3>Nível</h3>
+                  <div class="nivel-ajuste">
+                    <div><p>Faceis</p>   <p>800</p></div>
+                    <div><p>Medias</p>   <p>356</p></div>
+                    <div><p>Dificeis</p> <p>145</p></div>
+                    <div><p>Total</p>    <p>1301</p></div>
+                  </div>
+              </div>
+              <div class="toatal">
+                <h3>Horário de Pico</h3>
+                <div class="nivel-ajuste">
+                  <div><p>Faceis</p>   <p>800</p></div>
+                  <div><p>Medias</p>   <p>356</p></div>
+                  <div><p>Dificeis</p> <p>145</p></div>
+                  <div><p>Total</p>    <p>1301</p></div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="dias-chamada">
+              <h3>Dias com mais Chmadas</h3>
+              <b>1°.11</b>
+                <div class="nivel-ajuste">
+                  <div><p>Faceis</p>   <p>104</p></div>
+                  <div><p>Medias</p>   <p>47</p></div>
+                  <div><p>Dificeis</p> <p>28 </p></div>
+                  <div><p>Total</p>    <p>179</p></div>
+                </div>
+              <hr>
+              <b>2°.15</b>
+                <div class="nivel-ajuste">
+                  <div><p>Faceis</p>   <p>92</p></div>
+                  <div><p>Medias</p>   <p>56</p></div>
+                  <div><p>Dificeis</p> <p>17</p></div>
+                  <div><p>Total</p>    <p>165</p></div>
+                </div>
+              <hr>
+              <b>3°.28</b>
+              <div class="nivel-ajuste">
+                <div><p>Faceis</p>   <p>72</p></div>
+                <div><p>Medias</p>   <p>38</p></div>
+                <div><p>Dificeis</p> <p>40</p></div>
+                <div><p>Total</p>    <p>150</p></div>
+              </div>
+            </div>
+          
+            <div class="funcionarios">
+              <h3>Funcionarios Que Mais Atendem </h3>
+              <b>1°.Amb1</b>
+                <div class="nivel-ajuste">
+                  <div><p>Faceis</p>   <p>104</p></div>
+                  <div><p>Medias</p>   <p>47</p></div>
+                  <div><p>Dificeis</p> <p>28</p></div>
+                  <div><p>Total</p>    <p>179</p></div>
+                </div>
+              <hr>
+              <b>2°.Amb2</b>
+                <div class="nivel-ajuste">
+                  <div><p>Faceis</p>   <p>92</p></div>
+                  <div><p>Medias</p>   <p>56</p></div>
+                  <div><p>Dificeis</p> <p>17</p></div>
+                  <div><p>Total</p>    <p>165</p></div>
+                </div>
+              <hr>
+              <b>3°.Amb3</b>
+                <div class="nivel-ajuste">
+                  <div><p>Faceis</p>   <p>72</p></div>
+                  <div><p>Medias</p>   <p>38</p></div>
+                  <div><p>Dificeis</p> <p>40</p></div>
+                  <div><p>Total</p>    <p>150</p></div>
+                </div>
+            </div>
+          
+            <div class="clientes">
+              <h3>Clientes Com Mai Ligações</h3>
+              <b>1°.Amb1</b>
+              <div class="nivel-ajuste">
+                <div><p>Faceis</p>   <p>104</p></div>
+                <div><p>Medias</p>   <p>47</p></div>
+                <div><p>Dificeis</p> <p>28</p></div>
+                <div><p>Total</p>    <p>179</p></div>
+              </div>
+              <hr>
+              <b>2°.Amb2</b>
+              <div class="nivel-ajuste">
+                <div><p>Faceis</p>    <p>92</p></div>
+                <div><p>Medias</p>    <p>56</p></div>
+                <div><p>Dificeis</p>  <p>17</p></div>
+                <div><p>Total</p>     <p>165</p></div>
+              </div>
+              <hr>
+              <b>3°.Amb3</b>
+              <div class="nivel-ajuste">
+                <div><p>Faceis</p>   <p>72</p></div>
+                <div><p>Medias</p>   <p>38</p></div>
+                <div><p>Dificeis</p> <p>40</p></div>
+                <div><p>Total</p>    <p>150</p></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="box3"></div>
+      </section>
+      <hr class="line">
+
+      <!-- Graficos -->
+
+      {{! Inicio primeiro grafico }}
+
+      {{! select Grafico 1 }}
+      <section class="selects">
+        <h2>Chamados</h2>
+
+        {{!   data 1   }}
+        <div class="data ">
+          <span>mes</span>
+          <select  class="meses g1 monthg1" >
+
+          </select>
+          <span>ano</span>
+          <select class="g1 year yearg1" name=".monthg1">
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+          </select>
+
+          {{!   data 2   }}
+          <span class="diferente">mes</span>
+          <select class="meses g1 month2g1">
+
+          </select>
+          <span>ano</span>
+          <select class="g1 year year2g1" name=".month2g1">
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+          </select>
+
+        </div>
+      </section>
+
+      <section class="box1">
+
+      </section>
+      <hr class="line">
+
+
+      {{! Inicio segundo grafico }}
+
+      {{! select Grafico 2 }}
+      <section class="selects">
+        <h2>Prioridade do Chamado</h2>
+        <div class="data">
+
+          <span>mes</span>
+          <select  class="monthg2 g2">
+
+          </select>
+          <span>ano</span>
+          <select  class="year2 g2" name=".monthg2">
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+          </select>
+
+        </div>
+      </section>
+      <section class="box2"></section>
+
+
         <hr class="line">
 
-        {{! Inicio quatro grafico }}
+        {{! Inicio tres grafico }}
 
-        {{! select Grafico 4 }}
+        {{! select Grafico 3 }}
         <section class="selects">
-          <h2>Tempo Médio de Execução da Chamada por Funcionário</h2>
+          <h2>Horário de Pico</h2>
           <div class="data">
 
-            <span>nome</span>
-            <select class="nameg4"></select>
-
-
-            <span class="diferente">mes</span>
-            <select class="monthg4 g4"></select>
-
+            <span>mes</span>
+            <select class="monthg3 g3"></select>
 
             <span>ano</span>
-            <select class="year4 g4" name=".monthg4">
+            <select class="year3 g3" name=".monthg3">
               <option value="2018">2018</option>
               <option value="2019">2019</option>
             </select>
 
           </div>
         </section>
+      </div>
 
-        <div class="box4" ></div>
-        <hr class="line">
+      <section class="box3"></section>
+      <hr class="line">
 
-        {{! Inicio quinto grafico }}
+      {{! Inicio quatro grafico }}
 
-        {{! select Grafico 5 }}
-        <section class="selects">
-          <h2>Tempo Médio de Execução da Chamada por Cliente</h2>
-          <div class="data">
+      {{! select Grafico 4 }}
+      <section class="selects">
+        <h2>Tempo Médio de Execução da Chamada por Funcionário</h2>
+        <div class="data">
 
-            {{!   data 1   }}
-            <span>nome</span>
-            <select name="" id=""></select>
-            
-            {{!   data 2   }}
-            <span class="diferente">mes</span>
-            <select name="" id=""></select>
+          <span>nome</span>
+          <select class="nameg4"></select>
 
-            <span>ano</span>
-            <select name="" id="">
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-            </select>
-          </div>
-        </section>
 
-        <div id="box5" >
-            <canvas id="grafico8"></canvas>
+          <span class="diferente">mes</span>
+          <select class="monthg4 g4"></select>
+
+
+          <span>ano</span>
+          <select class="year4 g4" name=".monthg4">
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+          </select>
+
         </div>
-        
+      </section>
+
+      <section class="box4" ></section>
+      <hr class="line">
+
+      {{! Inicio quinto grafico }}
+
+      {{! select Grafico 8 }}
+      <section class="selects">
+        <h2>Tempo Médio de Execução da Chamada por Cliente</h2>
+        <div class="data">
+
+          {{!   data 1   }}
+          <span>nome</span>
+         <select class="nameg8"></select>
+
+          {{!   data 2   }}
+          <span class="diferente">mes</span>
+          <select class="monthg8 g8"></select>
+
+          <span>ano</span>
+         <select class="year8 g8" name=".monthg8">
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="box8" >
+          
+      </section>
+
     </section>
 
 
-    <script src="https://kit.fontawesome.com/32b09ec398.js" crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/32b09ec398.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/js/dadosGrafico1.js"></script>
     <script src="/js/dadosGrafico2.js"></script>
-    <script src="/js/dadosGrafico3.js"></script>
-    <script src="/js/dadosGrafico4.js"></script>
-    <script src="/js/dadosGrafico5.js"></script>
-    <script src="/js/dadosGrafico6.js"></script>
+    <script src="/js/dadosGrafico3_4_5_6.js"></script>
+
+    <script src="/js/dadosGrafico7.js"></script>
+    <script src="/js/dadosGrafico8.js"></script>
+    <script src="/js/resumoGraficos.js"></script>
   </body>
 </html>

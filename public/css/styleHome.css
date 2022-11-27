@@ -8,12 +8,14 @@
     src: url('/Fontes/Poppins-Medium.ttf') format('truetype');
 }
 
+
 *{
-    padding: 0;
     margin: 0;
     font-family:'poppins_400';
     box-sizing: border-box;    
 }
+
+/* config Graficos */
 #canvas1,#canvas3,#canvas4,#canvas5,#canvas6,#canvas7,#canvas8{
     max-height: 36vh;
 }
@@ -21,23 +23,100 @@
    width: 50vw ;
 }
 
-#menux{
-    background-color: cyan;
-    position: fixed;
-    padding: 10px;
-    width: 100%;
-    height: 60px;
-    z-index: 1;
+
+.flex{
+    display: flex;
+    flex-wrap: nowrap;
 }
+.none{
+    display: none !important;
+}
+
+/* menu X */
+#menux{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    border: 0.5px solid #C8CBD9;
+    
+}
+.white{
+    background: linear-gradient(rgba(161, 98, 247, 0.4) , rgba(131, 130, 222, 0) );
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 15%;
+    height: 80px;
+    align-items: center;
+    border-right: 0.5px solid #C8CBD9;
+
+}
+.espaco-menu-x2{
+    justify-content: space-between;
+    width: 85%;
+    align-items: center;
+    padding-left: 18px;
+    padding-right: 30px;
+
+}
+
+
+
+/* menu Y */
 #menuy{
-    background-color: red; 
+    background-color: #fff; 
     width: 15%; 
     height: 100vh;
     position: fixed;
     left: 0;
-    top:60px; 
+    top:80px; 
     z-index: 1;
+    border-right: 0.5px solid #C8CBD9;
 }
+
+.body-menu{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.body-menu > p{
+    padding-bottom: 12px;
+}
+.m-menu{
+    padding:30px 0px 0 20px;
+    color: gray;
+}
+.body-menu > p > a {
+    text-decoration: none;
+}
+.nav{
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    margin: 4px;
+}
+.nav:hover{
+    background: rgba(205, 157, 233, 0.347);
+    cursor:pointer;
+}
+.nav:hover > .cor_btn_menu{
+    color: #8c4af4 !important;
+}
+
+.body-menu > p > a:visited {
+    text-decoration: none;
+    color: gray;
+    letter-spacing: 0.5px;
+}
+.gira {
+    transform: rotate(90deg);
+}
+
+
 #conteudo{
     
     width: 70%; 
@@ -46,10 +125,37 @@
     left: 22.5%;
 
 }
+
+
+
 #box0{
     background-color:coral;
-    height:40vh;
+    padding: 10px;
+    top: 80px;
+    position:sticky !important;
 }
+.principal-0{
+    padding: 10px;
+   
+}
+.resumo{
+    display: flex;
+    justify-content: space-around;
+}
+.chamadas{
+    background-color: #ccc;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.nivel-ajuste >div> p{
+    padding: 6px;
+}
+.nivel-ajuste{
+    display: flex;
+
+}
+
 .box3{
     display: flex;
     flex-wrap: wrap;

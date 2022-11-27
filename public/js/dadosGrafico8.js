@@ -1,21 +1,24 @@
 
 
 
-//Gráfico7
+//Gráfico8
+//
+let url = "http://localhost:2000/dadosgraficos3"
 
-const g4 = document.getElementsByClassName('g4');
-const year4 = document.getElementsByClassName('monthg4');
 
-for (const grafico of year4) {    
+const g8 = document.getElementsByClassName('g8');
+const year8 = document.getElementsByClassName('monthg8');
+
+for (const grafico of year8) {    
   grafico.addEventListener('change', () => {   
 
-    renderizarNome(g4[0].value,g4[1].value)
+    renderizarNome8(g8[0].value,g8[1].value)
   })
 }
 
-function renderizarGrafico4(nome,mes,ano){   
+function renderizarGrafico8(nome,mes,ano){   
 
-  fetch("http://localhost:2000/dadosgraficos7?mes="+mes+"&ano="+ ano+"&nome="+nome)
+  fetch("http://localhost:2000/dadosgraficos8?mes="+mes+"&ano="+ ano+"&nome="+nome)
   .then((response) => {
   return response.json();
   })
@@ -176,12 +179,13 @@ function renderizarGrafico4(nome,mes,ano){
         }
     });
 
-    document.querySelector('.box4').innerHTML = ""
-    document.querySelector('.box4').appendChild(canvas);
+    document.querySelector('.box8').innerHTML = ""
+    document.querySelector('.box8').appendChild(canvas);
 
   }
   );
 }
+
 
 function removeItemOnce(arr, value) {
   var index = arr.indexOf(value);
@@ -192,19 +196,19 @@ function removeItemOnce(arr, value) {
 }
 
 // --------------------------- //
-//  INICIO DO SÉTIMO SELECT  //
+//  INICIO DO QUARTO SELECT  //
 // --------------------------- // 
 
-const selectsAno4 = document.getElementsByClassName('year4');
+const selectsAno8 = document.getElementsByClassName('year8');
  
-for (const selectAno of selectsAno4) { 
-  carregarSelect4(selectAno)  
+for (const selectAno of selectsAno8) { 
+  carregarSelect8(selectAno)  
   selectAno.addEventListener('change', function(){
-    carregarSelect4(selectAno)      
+    carregarSelect8(selectAno)      
   } )    
 }
 
-function carregarSelect4(selectAno){  
+function carregarSelect8(selectAno){  
   fetch("http://localhost:2000/selectdata?ano="+selectAno.value,)
   .then((response) => {
     return response.json();
@@ -227,23 +231,23 @@ function carregarSelect4(selectAno){
         select.appendChild(opcao);      
       }
       
-      let  ano = document.querySelector('.year4').value;
-      let  mes = document.querySelector('.monthg4').value;
+      let  ano = document.querySelector('.year8').value;
+      let  mes = document.querySelector('.monthg8').value;
 
-      renderizarNome(mes,ano);
+      renderizarNome8(mes,ano);
     }) 
 }
     
-document.querySelector('.nameg4').addEventListener('change',() =>{
-  let nome= document.querySelector('.nameg4').value;
-  let ano = document.querySelector('.year4').value;
-  let mes = document.querySelector('.monthg4').value;
-  renderizarGrafico4(nome,mes,ano)
+document.querySelector('.nameg8').addEventListener('change',() =>{
+  let nome= document.querySelector('.nameg8').value;
+  let ano = document.querySelector('.year8').value;
+  let mes = document.querySelector('.monthg8').value;
+  renderizarGrafico8(nome,mes,ano)
 })
 
-function renderizarNome(mes,ano){
+function renderizarNome8(mes,ano){
    
-  fetch("http://localhost:2000/selectname?mes="+mes+"&ano="+ ano,)
+  fetch("http://localhost:2000/selectcliente?mes="+mes+"&ano="+ ano,)
   .then((response) => {
     return response.json();
   })
@@ -251,7 +255,7 @@ function renderizarNome(mes,ano){
     let dados = res;     
 
     let nome = dados['nome']
-    let select = document.querySelector(".nameg4")
+    let select = document.querySelector(".nameg8")
     select.innerHTML = ""
     for(let i=0;i<nome.length;i++){         
       let opcao = document.createElement('option');      
@@ -264,8 +268,8 @@ function renderizarNome(mes,ano){
   
     }
 
-    let  nomedado = document.querySelector('.nameg4').value;
-    renderizarGrafico4(nomedado,mes,ano);
+    let  nomedado = document.querySelector('.nameg8').value;
+    renderizarGrafico8(nomedado,mes,ano);
   })
 
 }
