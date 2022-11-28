@@ -56,10 +56,9 @@ function renderizarGrafico3(mes,ano){
       new Chart(canvas, {
           type: 'pie',
           data: {
-            labels: ['Facil: '+yvalues[i][0],'Medio: '+yvalues[i][1],'Dificil: '+yvalues[i][2]],
+            labels: ['Baixa Prioridade','Media Prioridade','Alta Prioridade'],
             datasets: [
               {
-                label: "Baixa Prioridade",
                 backgroundColor:['rgba(131, 130, 222)','rgba(249, 166, 68)','rgba(252, 103, 104)'],
                 data:yvalues[i],
               }
@@ -67,20 +66,25 @@ function renderizarGrafico3(mes,ano){
           },
           options: 
           {
-            legend: { display: true ,position:'bottom' },
+            legend: { display: true ,
+              position:'bottom' 
+            },
             title: {
               display: true,
               text: 'Predicted world population (millions) in 2050'
             },
-            
-              plugins: {
+            interaction: {
+              intersect: false,
+              mode: 'dataset',
+            }, 
+            plugins: {
               title: {
                 display: true
               },
               legend: {
                 position: 'bottom',
                 align:'center'
-            }
+              }
             }
             
           }

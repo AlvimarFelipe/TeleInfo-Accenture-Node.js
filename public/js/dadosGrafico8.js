@@ -167,6 +167,10 @@ function renderizarGrafico8(nome,mes,ano){
             display: true
           },
         },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
         responsive: true,
         scales: {
           x: {

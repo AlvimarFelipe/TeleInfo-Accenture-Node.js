@@ -97,19 +97,22 @@ function renderizarGrafico2(mes,ano){
           options: 
           {
             responsive:false,
-            legend: { display: false ,position:'botton' },
+            legend: { display: false ,
+              position:'botton' 
+            },
+            interaction: {
+              intersect: false,
+              mode: 'index'
+            }, 
             title: {
               display: true,
               text: 'Predicted world population (millions) in 2050'
             },
-          
+            
             plugins: {
               legend: {
-                  position: 'bottom',
+                position: 'left',
               }
-            },
-            interaction: {
-              intersect: false
             }
           }
       }); 

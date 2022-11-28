@@ -158,12 +158,15 @@ function renderizarGrafico4(nome,mes,ano){
             display: true,
             text: 'Predicted world population (millions) in 2050'
           },
-        
+          interaction: {
+            intersect: false,
+            mode: 'index',
+          }, 
           plugins: {
-          title: {
-            display: true
-          },
-        },
+            title: {
+              display: true
+            },
+          }, 
         responsive: true,
         scales: {
           x: {

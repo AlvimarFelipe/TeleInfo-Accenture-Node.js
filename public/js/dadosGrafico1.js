@@ -99,6 +99,10 @@ function renderizarGrafico(mes,ano,mes2,ano2){
             legend: { display: false},
             title: {
               display: true
+            }, 
+            interaction: {
+              mode: 'index',
+              intersect: false,
             },
             plugins: {
               legend: {
