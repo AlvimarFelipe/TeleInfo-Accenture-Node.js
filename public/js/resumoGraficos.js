@@ -43,6 +43,7 @@ function carregarSelectResumo(selectAnoRes){
 
       renderizarResumo(mes,ano)
     }) 
+    
 }
     
 document.querySelector('.monthResumo').addEventListener('change',() =>{
@@ -101,7 +102,6 @@ function renderizarResumo(mes,ano){
         }
         document.querySelector('.'+div).appendChild(ol)
       }
-      
       
     }
   ); 

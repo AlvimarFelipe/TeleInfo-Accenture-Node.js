@@ -28,6 +28,7 @@ function renderizarGrafico4(nome,mes,ano){
     let nomeFacil = []
     let nomeMedio = []
     let nomeDificil = []
+   
         
     let i = 0
     let numeros =1
@@ -38,7 +39,7 @@ function renderizarGrafico4(nome,mes,ano){
         i++;
         numeros++;   
       }else{
-        nomeFacil.push("AMB"+numeros);
+        nomeFacil.push(dados['funcionarios'][numeros-1]['nome']);
         somaFacil.push(0);
         numeros++;      
       }      
@@ -53,7 +54,7 @@ function renderizarGrafico4(nome,mes,ano){
         j++;
         numerosMedio++;   
       }else{
-        nomeMedio.push("AMB"+numerosMedio);
+        nomeMedio.push(dados['funcionarios'][numerosMedio-1]['nome']);
         somaMedio.push(0);
         numerosMedio++;      
       }      
@@ -68,7 +69,7 @@ function renderizarGrafico4(nome,mes,ano){
         h++;
         numerosDificil++;   
       }else{
-        nomeDificil.push("AMB"+numerosDificil);
+        nomeDificil.push(dados['funcionarios'][numerosDificil-1]['nome']);
         somaDificil.push(0);
         numerosDificil++;      
       }      

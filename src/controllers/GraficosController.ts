@@ -139,6 +139,9 @@ export const data4 = async (req: Request, res: Response)=>{
   var datas = ano+'-'+mes;
 
   let nome = req.query.nome
+  const funcionarios = await sequelizes.query(  'select f.nome from atendimento a inner join funcionario f on f.id = a.funcionario_ID where  a.data like '+`"${datas}%"`+' group by f.id order by f.id;', {
+    type: QueryTypes.SELECT
+});
 
 
   const facil = await sequelizes.query('select  count(a.idAtendimento) AS soma,f.nome,f.id from atendimento a inner join trabalho t on  t.id = a.trabalho_ID inner join funcionario f on f.id = a.funcionario_ID where (t.Tempo_medio <= 2400  && a.data like '+`"${datas}%"`+') group by f.id order by f.id;', {
@@ -154,6 +157,7 @@ export const data4 = async (req: Request, res: Response)=>{
   });
 
   res.json({
+    funcionarios,
      facil,
      medio,
      dificil,
@@ -170,7 +174,9 @@ export const data5 = async (req: Request, res: Response)=>{
 
   let nome = req.query.nome
 
-
+  const clientes = await sequelizes.query('select  c.nome from atendimento a right join cliente c on c.id = a.cliente_ID where a.data like '+`"${datas}%"`+' group by c.id order by c.id;', {
+    type: QueryTypes.SELECT
+});
   const facil = await sequelizes.query('select  count(a.idAtendimento) AS soma, c.nome,c.id from atendimento a inner join trabalho t on  t.id = a.trabalho_ID right join cliente c on c.id = a.cliente_ID where t.Tempo_medio <= 2400  && a.data like '+`"${datas}%"`+' group by c.id order by c.id;', {
       type: QueryTypes.SELECT
   });
@@ -184,6 +190,7 @@ export const data5 = async (req: Request, res: Response)=>{
   });
 
   res.json({
+    clientes,
      facil,
      medio,
      dificil,
