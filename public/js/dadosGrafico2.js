@@ -111,7 +111,7 @@ function renderizarGrafico2(mes,ano){
             
             plugins: {
               legend: {
-                position: 'left',
+                position: 'top',
               }
             }
           }

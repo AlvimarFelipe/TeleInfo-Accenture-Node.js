@@ -35,14 +35,20 @@ function renderizarGrafico3(mes,ano){
     let noiteAlta  = dados['noites'][2][0]['valor'];
 
   var yvalues = [[madrugadaBaixa,madrugadaMedia,madrugadaAlta],[manhaBaixa,manhaMedia,manhaAlta],[tardeBaixa,tardeMedia,tardeAlta],[noiteBaixa,noiteMedia,noiteAlta]];
-
+  let horario = ["Madrugada <br/> 00:00  - 06:00", "Manhã <br/> 06:00  - 12:00", "Tarde <br/> 12:00  - 18:00","Noite <br/> 18:00 - 00:00"]
   document.querySelector('.box3').innerHTML = ''
+
+
   for (let i=0;i<yvalues.length;i++){
-  
+   
 
       let canvas = document.createElement('canvas');  
       let div = document.createElement('div');  
      
+      let p = document.createElement('p')
+      p.innerHTML = horario[i]
+      p.classList.add('gCenter')
+      div.appendChild(p)
     
       canvas.classList.add('tamanho');
       let num = 2

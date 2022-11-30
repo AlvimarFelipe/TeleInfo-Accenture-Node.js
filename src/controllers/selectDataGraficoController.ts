@@ -17,13 +17,10 @@ export const select1 = async (req: Request, res: Response)=>{
     let selectdata = await sequelizes.query('SELECT SUBSTRING(data, 6,2) AS mes FROM `Atendimento` where data like '+`"${ano}%"`+' group by mes;', {
         type: QueryTypes.SELECT
     });
-    
 
     res.json({ 
         selectdata
     });
-  
-
 };
 
 export const select2 = async (req: Request, res: Response)=>{
@@ -53,11 +50,7 @@ export const select3 = async (req: Request, res: Response)=>{
     let nome = await sequelizes.query(' select c.nome from atendimento a inner join trabalho t on  t.id = a.trabalho_ID inner join cliente c on c.id = a.cliente_ID where a.data like '+`"${data}%"`+' group by c.id order by c.id;', {
         type: QueryTypes.SELECT
     })
-   
-    
     res.json({ 
         nome
     });
-  
-
 };

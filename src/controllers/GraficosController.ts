@@ -1,8 +1,6 @@
 import { Request, Response } from 'express';
 import sequelize, { Op, QueryTypes } from 'sequelize';
 import { sequelizes } from '../instances/mysql';
-import { Atendimento } from '../models/atendimento';
-  
 
 
 // Dados Graficos um

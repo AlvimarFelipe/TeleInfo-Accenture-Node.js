@@ -10,39 +10,72 @@
   </head>
   <body>
 
-    <h1>Funcionarios </h1>
+      <div class=" principal-0">
+        <div class="flex beetwen">
+          <p class="bt-text">Resumo</p>         
+      
+          <span class="box-icon"><i class="bi bi-caret-up-fill icone"></i>  </span>   
+        </div>
+        
+        <div class="resumo">
+          <div>
+            <select class="monthResumo selectResume config-btn"></select>
+            <span class="bt-text2">de</span>   
+            <select class="yearResumo selectResume config-btn" name=".monthResumo">
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+            </select>
+          </div>
+          <div class="resumo-body">
+            <div class="chamada">
+              <h3>Chamadas</h3>
+              {{#total}} 
+                <p>Total: <span class="destaque t">{{quantidade}}</span></p>{{mes}}
+                <div class="li-ali"><div class="li-line"></div></div>
+              {{/total}} 
+              {{#facil}} 
+              <p>Baixa: <span class="destaque b">{{quantidade}}</span></p>
+                <div class="li-ali"><div class="li-line"></div></div>
+              {{/facil}} 
+              {{#medio}} 
+              <p>Media: <span class="destaque m">{{quantidade}}</span></p>
+                <div class="li-ali"><div class="li-line"></div></div>
+              {{/medio}} 
+              {{#dificil}} 
+              <p>Alta: <span class="destaque a">{{quantidade}}</span></p>
+              {{/dificil}} 
+            </div>
+            <div class="dias-chamada">
+              <h3>Dias com mais Chamadas</h3>
+              <ol> 
+              {{#dias}} 
+                <li><span class="destaque">Dia {{dias}}</span> = <span class="destaque t">{{quantidade}}</span> Chamadas</li>
+                <div class="li-ali"><div class="li-line"></div></div>
+              {{/dias}} 
+            </ol> 
+            </div>
+            <div class="funcionarios">
+              <h3>Funcionarios Que Mais Atendimentos </h3>
+              <ol> 
+                {{#funcionarios}} 
+                  <li><span class="destaque">{{nome}}</span> = <span class="destaque t">{{soma}}</span> Atendimentos</li>
+                  <div class="li-ali"><div class="li-line"></div></div>
+                {{/funcionarios}} 
+              </ol> 
+            </div>
+            <div class="clientes">
+              <h3>Clientes Com Mais Ligações</h3>
+              <ol>
+                {{#clientes}} 
+                  <li><span class="destaque">{{nome}}</span> = <span class="destaque t">{{soma}}</span> Chamados</li>
+                  <div class="li-ali"><div class="li-line"></div></div>
+                {{/clientes}} 
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
 
-   <div>
-      nome
-      <label  for="nome"></label>
-      <select id="selecionado" class="cor_btn btn_padding" name="nome" >
-        {{#funcionarios}}
-            <option value="">{{total}}</option>
-        {{/funcionarios}} 
-      </select>     
-    </div> 
-
-<div  style="display:flex">
-    <ul> 
-        {{#records}} 
-            <li><b>DATA    : </b>{{Data}}</li>
-            <li><b>DATAaNO : </b>{{DATAaNO}}</li>
-            <li><b>HORA    : </b>{{ Hora_inicio}}</li>
-            <li><b>TOTAL   : </b>{{total}}</li> 
-            <br> 
-        {{/records}} 
-    </ul> 
-    <ul> 
-        {{#records2}} 
-            <li><b>DATA    : </b>{{id}}</li>
-            <li><b>DATAaNO : </b>{{data}}</li>
-            <li><b>HORA    : </b>{{ mes}}</li>
-            <li><b>TOTAL   : </b>{{total}}</li> 
-            <br> 
-        {{/records2}} 
-    </ul> 
-  </div>
-      <span id="teste"></span>
     <script src="/js/filtro.js"></script>
 
   </body>

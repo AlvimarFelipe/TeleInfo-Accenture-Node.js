@@ -28,12 +28,37 @@ import { sequelizes } from '../instances/mysql';
 export const conteudo = async (req: Request, res: Response)=>{
   
     var  ano = '2018-11'
-    var t ="t.Tempo_medio <= 2400";
-    const records2 = await sequelizes.query('select  count(a.idAtendimento), a.data, SUBSTRING(a.data, 6,2) AS mes ,a.Hora_inicio from atendimento a inner join trabalho t on  t.id = a.trabalho_ID  where  ('+`${t}`+' && a.data like '+`"${ano}%"`+')  &&  (a.Hora_inicio >= "00:00:01" && a.Hora_inicio < "06:00:00") group by mes order by a.Hora_inicio;', {
+    const total = await sequelizes.query('select  count(a.idAtendimento) As quantidade, SUBSTRING(a.data, 6,2) AS mes from atendimento a inner join trabalho t on  t.id = a.trabalho_ID where a.data like ' +`"${ano}%"`+ ' group by mes order by quantidade DESC;', {
         type: QueryTypes.SELECT
-      });
+    });
+    const facil = await sequelizes.query('select  count(a.idAtendimento) As quantidade, SUBSTRING(a.data, 6,2) AS mes from atendimento a inner join trabalho t on  t.id = a.trabalho_ID where t.Tempo_medio <= 2400  && a.data like ' +`"${ano}%"`+ ' group by mes;', {
+        type: QueryTypes.SELECT
+    });
+    const medio = await sequelizes.query('select  count(a.idAtendimento) As quantidade, SUBSTRING(a.data, 6,2) AS mes from atendimento a inner join trabalho t on  t.id = a.trabalho_ID where (Tempo_medio > 2400  && Tempo_medio <= 12000)  && a.data like ' +`"${ano}%"`+ ' group by mes;', {
+        type: QueryTypes.SELECT
+    });
+    const dificil = await sequelizes.query('select  count(a.idAtendimento) As quantidade, SUBSTRING(a.data, 6,2) AS mes from atendimento a inner join trabalho t on  t.id = a.trabalho_ID where Tempo_medio > 12000 && a.data like ' +`"${ano}%"`+ ' group by mes;', {
+        type: QueryTypes.SELECT
+    });
+    const dias = await sequelizes.query('select  count(a.idAtendimento) As quantidade, SUBSTRING(a.data, 9,2) AS dias from atendimento a inner join trabalho t on  t.id = a.trabalho_ID where a.data like ' +`"${ano}%"`+ ' group by dias order by quantidade DESC LIMIT 3;', {
+        type: QueryTypes.SELECT
+    });
+    const funcionarios = await sequelizes.query('select  count(a.idAtendimento) AS soma, f.nome ,f.id from atendimento a inner join trabalho t on  t.id = a.trabalho_ID right join funcionario f on f.id = a.funcionario_ID where  a.data like '+`"${ano}%"`+' group by f.id order by soma DESC LIMIT 3;', {
+        type: QueryTypes.SELECT
+    });
+    const clientes = await sequelizes.query('select  count(a.idAtendimento) AS soma, c.nome,c.id from atendimento a inner join trabalho t on  t.id = a.trabalho_ID right join cliente c on c.id = a.cliente_ID where a.data like '+`"${ano}%"`+' group by c.id order by soma DESC LIMIT 3;', {
+        type: QueryTypes.SELECT
+    });
+
+
     res.render('pages/testeConteudo', {
-        records2
+        total,
+        facil,
+        medio,
+        dificil,
+        dias,
+        funcionarios,
+        clientes
     });
 };
 
