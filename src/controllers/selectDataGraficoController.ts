@@ -14,7 +14,7 @@ export const select1 = async (req: Request, res: Response)=>{
 
     let ano = req.query.ano;
  
-    let selectdata = await sequelizes.query('SELECT SUBSTRING(data, 6,2) AS mes FROM `Atendimento` where data like '+`"${ano}%"`+' group by mes;', {
+    let selectdata = await sequelizes.query('SELECT SUBSTRING(data, 6,2) AS mes FROM `atendimento` where data like '+`"${ano}%"`+' group by mes;', {
         type: QueryTypes.SELECT
     });
 

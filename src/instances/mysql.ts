@@ -1,16 +1,20 @@
 import { Sequelize } from 'sequelize';
 
-import dotenv from 'dotenv';
+const nomebanco ='db_accenture'
+const Usuario = ''
+const Senha =''
+const Porta ='3306'
 
-dotenv.config();
+
 
 export const sequelizes = new Sequelize(
-    process.env.MYSQL_DB as string,
-    process.env.MYSQL_USER as string,
-    process.env.MYSQL_PASSWORD as string,
+    nomebanco,
+    Usuario,
+    Senha,
     {
         dialect: 'mysql',
-        port: parseInt(process.env.MYSQL_PORT as string)
-        
+        port: parseInt(Porta),
     }
 );
+
+
